@@ -1,33 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=DM+Serif+Display:ital@0;1&family=Lilita+One&family=Patua+One&family=Piedra&display=swap'); 
 
+:root {
+    --piedra-serif: "Piedra", serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 
 body {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
     background-color: #E4CEC3;
 }
-/************** header **************/
 
-.header{
+/********************* header ************************/
+
+.header {
     display: flex;
     flex-direction: column;
 }
 
-.nav{
+/****************** nav ****************/
+.nav {
     display: flex;
-    gap: 5rem;
+    justify-content: space-between;
     align-items: center;
+    padding: 2rem;
 }
 
-.nav h1{
-    font-size: 5rem;
-    font-family: 'DM Serif Display';
+.nav h2 {
+    font-size: 4rem;
+    font-family: var(--piedra-serif);
 }
-.nav a{
-    font-size: 8rem;
+
+.menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+.menu a {
+    font-size: 2rem;
     text-decoration: none;
+    color: black;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
 }
 
-.banner{
-    background: url('/images/food/pexels-nadin-sh-78971847-29160624.jpg');
+.menu a:hover {
+    transform: scale(1.05);
+}
+
+/******************************** banner ****************************/
+.banner {
+    background: url('/images/banner/bannerImg.jpg') no-repeat center center;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,22 +68,22 @@ body {
     padding: 2rem;
 }
 
-.banner h1{
-    font-size: 15rem;
-    font-family: 'DM Serif Display';
-    color: black;
-}
-
-.banner p{
-    font-size: 10rem;
-    font-family: 'DM Serif Display';
-    color: black;
-}
-
-.banner button{
+.banner h1 {
     font-size: 5rem;
     font-family: 'DM Serif Display';
-    background-color: black;
+    color: wheat;
+}
+
+.banner p {
+    font-size: 4rem;
+    font-family: 'DM Serif Display';
+    color: white;
+}
+
+.banner button {
+    font-size: 4rem;
+    font-family: 'DM Serif Display';
+    background-color: rgb(66, 17, 66);
     color: white;
     padding: 1rem 2rem;
     border: none;
@@ -60,42 +93,150 @@ body {
 
 
 
-
-/************** main **************/
-
-
-.main{  
+/****************************************** MAIN ************************************/
+.main {  
     display: flex;
     flex-direction: column;
 }
 
-.chef {
-    background-color: black;
-    display: flex;
-    gap: 5rem;
-    justify-content: center;
-}
-
-.chef1{
-    width: auto;
-    height: 40vh;
-    background-color: #ffff;
+/******************** Seccion de anuncio ******************/
+.anucio {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 2rem;
-    border-radius: 2rem;
 }
 
-.chef1 img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.anucio h2 {
+    font-size: 4rem;
+    font-family: 'DM Serif Display';
+}
+
+.anucio p {
+    font-size: 3rem;
+    font-family: 'DM Serif Display';
+}
+
+/****************** Seccion de cheff *************************/
+.chef {
+    background-color: white;
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.chef1 {
+    width: 35rem;
+    height: 35rem;
+    background-color: #333;
     border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensure images do not overflow the container */
+    transition: transform 0.3s ease;
+    gap: 0.2rem;
+}
+
+.chef1:hover {
+    transform: scale(1.05);
+}
+
+.chef1 img {
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+    border-radius: 2rem 2rem 0 0; /* Only round the top corners */
+}
+
+.chef1 h3 {
+    color: white;
+    font-size: 2.5rem;
+    padding: 1rem;
+    text-align: center;
 }
 
 .chef1 p{
-    font-size: 3rem;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
 }
-/************* footer *************/
+
+/**********************Platos del dia **********************/
+.platos {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.platos h2 {
+    font-size: 4rem;
+    font-family: 'DM Serif Display';
+    text-align: center;
+}
+
+.platos__seccion {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; 
+}
+
+.plato{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensure images do not overflow the container */
+    transition: transform 0.3s ease;
+}
+.plato img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+}
+
+.plato h3 {
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.plato p {
+    font-size: 2rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+/************************** Testimonios ***************************/
+
+.testimonios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.testimonio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/****************************************** FOOTER ******************************************/
+.footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    padding: 2rem;
+    background-color: #333;
+    color: white;
+    font-size: 1.5rem;
+}
