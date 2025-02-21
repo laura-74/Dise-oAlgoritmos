@@ -14,7 +14,7 @@ body {
     display: grid;
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
-    background-color: #E4CEC3;
+    background-color: #FFFAF2;
 }
 
 /********************* header ************************/
@@ -34,7 +34,7 @@ body {
 
 .nav h2 {
     font-size: 4rem;
-    font-family: var(--piedra-serif);
+    font-family: 'DM Serif Display';
 }
 
 .menu {
@@ -48,9 +48,9 @@ body {
     font-size: 2rem;
     text-decoration: none;
     color: black;
-    background-color: white;
     border-radius: 0.5rem;
     padding: 0.5rem;
+    font-family: 'DM Serif Display';
 }
 
 .menu a:hover {
@@ -66,12 +66,13 @@ body {
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    gap: 1rem;
 }
 
 .banner h1 {
     font-size: 5rem;
     font-family: 'DM Serif Display';
-    color: wheat;
+    color: white;
 }
 
 .banner p {
@@ -81,11 +82,11 @@ body {
 }
 
 .banner button {
-    font-size: 4rem;
+    font-size: 2rem;
     font-family: 'DM Serif Display';
-    background-color: rgb(66, 17, 66);
-    color: white;
-    padding: 1rem 2rem;
+    background-color: white;
+    color: black;
+    padding: 1rem 1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -216,11 +217,18 @@ body {
 
 /************************** Testimonios ***************************/
 
+.tituloTestimonios {
+    font-size: 2rem;
+    font-family: 'DM Serif Display';
+    text-align: center;
+    padding: 2rem;
+}
 .testimonios {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 2rem;
     gap: 1rem;
+
 }
 
 .testimonio {
@@ -233,10 +241,15 @@ body {
 /****************************************** FOOTER ******************************************/
 .footer {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     text-align: center;
     padding: 2rem;
     background-color: #333;
     color: white;
     font-size: 1.5rem;
+}
+
+.footer h4 {
+    font-size: 4rem;
+    font-family: 'DM Serif Display';
 }
